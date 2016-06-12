@@ -34,7 +34,7 @@ storageService.addStorageKey(key : string) : void
 storageService.getStorageValue(key : string) : void
 
 //set the storage value
-storageService.settStorageValue(key : string, value : any) : void
+storageService.setStorageValue(key : string, value : any) : void
 
 //save all storages
 storageService.saveAllStorages() : void
@@ -123,7 +123,7 @@ LocalStorage decorators automatically initialize values with null it doesnt find
 
 EXTRA
 ----
-I did this lib to help me in angular 2 apps. You are free to use it in yours apps, but remember that storageService is not an angular 2 service. It can't be injected. Instead, just import using es6 sintax and you are free to use in your components/directives.
+I did this lib to help me in angular 2 apps. You are free to use it in yours apps, but remember that storageService is not an angular 2 service. It can't be injected(it can by value, but it shouldn't). Instead, just import using es6 sintax and you are free to use in your components/directives.
 
 If autosave is on, every change in a property will trigger an JSON.stringfy. If this is a performance issue for you, turn autosave off, and save data wherever you want with storageService.
 
