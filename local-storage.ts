@@ -1,5 +1,5 @@
 //LOCAL STORAGE SERVICE
-class LStorageService {
+export class LStorageService {
     private _storage : any = {};
 
     public addStorageKey(storageKey : any) : void {
