@@ -126,6 +126,28 @@ EXTRA
 ----
 I did this lib to help me in angular 2 apps. You are free to use it in yours apps, but remember that storageService is not an angular 2 service. It can't be injected(it can by value, but it shouldn't). Instead, just import using es6 sintax and you are free to use in your components/directives.
 
+storageService is an instance of LStorageService. It can be used globally. If you want to use DI feature of angular 2, here is a tip for u :
+
+```javascript
+//bootstrap and provide dependencies form ng2
+import {storageService, LStorageService} from 'localstorage-decorator';
+
+bootstrap(AppComponent, [provide(LStorageService, {useValue : storageService})]);
+
+
+//Now you can use DI
+import {Component}        from '@angular/core'
+import {LStorageService} from 'localstorage-decorator'
+
+@Component({
+	//blablabla
+})
+export class YourComponent {
+	constructor(private _storageService : LStorageService) {} //There you go!
+}
+```
+
+
 If autosave is on, every change in a property will trigger an JSON.stringfy. If this is a performance issue for you, turn autosave off, and save data wherever you want with storageService.
 
 License
