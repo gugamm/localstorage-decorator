@@ -32,6 +32,12 @@ class Student {
     public name : string;
 }
 
+//using default value
+class Student {
+    @LocalStorage(false, "STUDENT_NAME")
+    public name : string = this.name || "my default value";
+}
+
 //default key
 class Student {
     @LocalStorage(true) //key will be equal to property name. In this case, "name"
