@@ -54,7 +54,7 @@ Development
 
 **with es6/typescript**
 ```javascript
-import {LocalStorage, storageService} from 'localstorage-decorator';
+import {LocalStorage, LStorageService, storageService} from 'localstorage-decorator';
 ```
 
 **use in class with decorators**
