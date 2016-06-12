@@ -104,6 +104,7 @@ student.name = "Banana"; //If autoSave is on, it will automatically save. Otherw
 
 //WITHOUT DECORATOR
 student.name = "Banana";
+storageService.setStorageValue("STUDENT_NAME", student.name);
 storageService.saveStorageByKey("STUDENT_NAME");
 //or
 storageService.saveAllStorages();
