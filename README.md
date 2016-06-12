@@ -9,6 +9,46 @@ LOCALSTORAGE DECORATOR is a library to help you manage browser localStorage easi
 $ git clone https://github.com/gugamm/localstorage-decorator.git
 ```
 
+API
+----
+
+**LocalStorage decorator**
+```javascript
+/*
+* LocalStorage decorator can be used with property
+* It will initialize the property value with null if no localStorage has been found. You can provide a default value
+* (see example below)
+* autoSave : if true LocalStorage will save property value at any attribution.
+* key      : key that will represent its value in local storage. If two classes have two properties with same key,
+*            they will have the same value
+*/
+@LocalStorage(autoSave : boolean, key ?: string)
+```
+
+**storageService**
+```javascript
+//create a storage for a key and initialize with localStorage value. If no value is found, then initialize with null
+storageService.addStorageKey(key : string) : void
+
+//return the storage value
+storageService.getStorageValue(key : string) : void
+
+//set the storage value
+storageService.settStorageValue(key : string, value : any) : void
+
+//save all storages
+storageService.saveAllStorages() : void
+
+//save a storage by key
+storageService.saveStorageByKey(key : string) : void
+
+//Clear browser localStorage and set all storage values to null
+storageService.clearStorage() : void
+
+//clear localStorage for that key and set its value to null
+storageService.clearStorageByKey(key : string) : void
+```
+
 Development
 ----
 
