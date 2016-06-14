@@ -120,13 +120,12 @@ storageService.clearStorage();
 
 IMPORTANT
 ----
-LocalStorage decorators automatically initialize values with null it doesnt find any value from localStorage
+LocalStorage decorators automatically initialize values with null if it doesn't find any value from localStorage
 
 EXTRA
 ----
-I did this lib to help me in angular 2 apps. You are free to use it in yours apps, but remember that storageService is not an angular 2 service. It can't be injected(it can by value, but it shouldn't). Instead, just import using es6 sintax and you are free to use in your components/directives.
-
-storageService is an instance of LStorageService. It can be used globally. If you want to use DI feature of angular 2, here is a tip for u :
+I made this lib to help me in angular 2 apps. You're free to use it in your applications, but remember that storageService is not an angular 2 service. It shouldn't be injected. Instead, import it using the es6 syntax. You're free to use in your components and directives.
+storageService is an instance of LStorageService so it can be used globally. Here's an example of using it with angular 2's DI feature:
 
 ```javascript
 //bootstrap and provide dependencies form ng2
@@ -148,7 +147,7 @@ export class YourComponent {
 ```
 
 
-If autosave is on, every change in a property will trigger an JSON.stringfy. If this is a performance issue for you, turn autosave off, and save data wherever you want with storageService.
+If autosave is on, every change in a property will trigger a JSON.stringfy call. If this is a performance issue for you, turn autosave off, and save data wherever you want with storageService.
 
 License
 ----
